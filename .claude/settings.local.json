@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__todo__add_todo",
+      "mcp__todo__list_todos"
+    ]
+  }
+}

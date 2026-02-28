@@ -1,0 +1,16 @@
+{
+  "name": "todo-mcp-server",
+  "version": "1.0.0",
+  "description": "A simple Todo MCP Server for Claude",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "todo-mcp-server": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
