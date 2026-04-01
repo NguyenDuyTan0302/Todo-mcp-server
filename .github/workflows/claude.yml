@@ -32,8 +32,13 @@ jobs:
 
       - name: Project Setup
         run: |
-          npm run setup
-          npm run dev:daemon
+          npm install
+          npx prisma generate
+          npx prisma migrate deploy || true
+          export NODE_OPTIONS=--require ./node-compat.cjs
+          nohup npx next dev --turbopack > logs.txt 2>&1 &
+          echo "Waiting for server to start..."
+          sleep 15
 
       - name: Run Claude Code
         id: claude
@@ -41,7 +46,6 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
-          # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
             actions: read
 
