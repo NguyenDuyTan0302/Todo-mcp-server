@@ -45,6 +45,8 @@ jobs:
           additional_permissions: |
             actions: read
 
+          allowed_tools: "Bash(npm:*),Bash(sqlite3:*),mcp__playwright__browser_snapshot,mcp__playwright__browser_click,mcp__playwright__browser_navigate,mcp__playwright__browser_type,mcp__playwright__browser_fill_form,mcp__playwright__browser_take_screenshot,mcp__playwright__browser_evaluate,mcp__playwright__browser_press_key,mcp__playwright__browser_wait_for,mcp__playwright__browser_network_requests,mcp__playwright__browser_console_messages"
+
           custom_instructions: |
             The project is already set up with all dependencies installed.
             The server is already running at localhost:3000. Logs from it
